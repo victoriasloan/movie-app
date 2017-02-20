@@ -6,7 +6,7 @@ import movieReducer from 'reducers/movieReducer';
 export const makeRootReducer = (asyncReducers) => {
     return combineReducers({
         // Add sync reducers here
-        movieReducer,
+        movies: movieReducer,
         ...asyncReducers
     });
 };
