@@ -1,16 +1,11 @@
-/*IMPORT ACTION*/
-
-const initialState = {};
-
-const movieReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'SEARCH_MOVIE':
-        return {
-
-        };
-        default:
-        return state;
-    }
+//WILL PULL REAL API :)
+const movieReducer = () => {
+    return [
+        { title: 'Die Hard', year: 2011 },
+        { title: 'Harry Potter', year: 2001 },
+        { title: 'Elf', year: 2004 },
+        { title: 'Mean Girls', year: 2012 }
+    ];
 };
 
 
