@@ -1,26 +1,24 @@
 import React from 'react';
-import { createStore } from 'redux';
+import { Router, Route, hashHistory } from 'react-router';
+//import apiUrls from './apis/apiUrls';
+import ReactDOM from 'react-dom';
+import createStore from './store/createStore';
+import AppContainer from './containers/AppContainer';
+import searchBar from './components/searchBar';
 
-const movies = (state = 0, action) => {
-        switch (action.type) {
-        case 'INCREMENT':
-         return state + 1;
-         case 'DECREMENT':
-         return state -1;
-         default:
-         return state;
-    }
-};
 
-const store = createStore(movies);
+const mountNode = document.querySelector('#root');
 
-const render = () => {
-    document.body.innerText = store.getState();
-};
 
-store.subscribe(render);
-render();
+const router = (
+    <Router history={hashHistory}>
+        <Route path="/" component={searchBar} >
+        </Route>
+      </Router>
+);
 
-document.addEventListener('click', () => {
-    store.dispatch({ type: "DECREMENT"});
-});
+ReactDOM.render(
+<AppContainer
+    store={createStore({})}
+    router={router}
+/>, mountNode);
