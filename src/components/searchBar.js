@@ -4,7 +4,10 @@ import React, { Component } from 'react';
 class searchBar extends Component {
     render() {
         return (
-            <h1>hi</h1>
+            <div>
+                <p>Search by Film Name:</p>
+                <input type="text" name="name" id="filmname"></input>
+            </div>
         );
     }
 }
