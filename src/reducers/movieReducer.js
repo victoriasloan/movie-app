@@ -1,5 +1,4 @@
-/*IMPORT ACTION*/
-
+//WILL PULL REAL API :)
 const movieReducer = () => {
     return [
         { title: 'Die Hard', year: 2011 },
