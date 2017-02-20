@@ -1,8 +1,10 @@
+/*IMPORT ACTION*/
+
 const initialState = {};
 
 const movieReducer = (state = initialState, action) => {
     switch (action.type) {
-        case 'ADD_MOVIE':
+        case 'SEARCH_MOVIE':
         return {
 
         };

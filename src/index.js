@@ -1,6 +1,5 @@
 import React from 'react';
 import { Router, Route, hashHistory } from 'react-router';
-//import apiUrls from './apis/apiUrls';
 import ReactDOM from 'react-dom';
 import createStore from './store/createStore';
 import AppContainer from './containers/AppContainer';
