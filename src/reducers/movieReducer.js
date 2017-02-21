@@ -1,11 +1,11 @@
-//WILL PULL REAL API :)
-const movieReducer = () => {
-    return [
-        { title: 'Die Hard', year: 2011 },
-        { title: 'Harry Potter', year: 2001 },
-        { title: 'Elf', year: 2004 },
-        { title: 'Mean Girls', year: 2012 }
-    ];
+import { FETCH_MOVIES } from '../actions/actions';
+
+function movieReducer(state = [], action) {
+    switch (action.type) {
+        case FETCH_MOVIES:
+        return [ action.payload.data, ...state ];
+    }
+    return state;
 };
 
 

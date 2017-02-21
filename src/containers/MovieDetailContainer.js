@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class MovieDetail extends Component {
@@ -27,4 +27,4 @@ MovieDetail.propTypes = {
     movie: React.PropTypes.object
 };
 
-export default connect(mapStateToProps)(MovieDetail);
+export default connect(mapStateToProps)(MovieDetail);*/

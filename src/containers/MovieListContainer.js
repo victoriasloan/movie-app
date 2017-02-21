@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { selectMovie } from '../actions/actions';
 import { bindActionCreators } from 'redux';
@@ -46,4 +46,4 @@ MovieList.propTypes = {
 };
 
 
-export default connect(mapStateToProps, mapDispatchToProps)(MovieList);
+export default connect(mapStateToProps, mapDispatchToProps)(MovieList);*/
