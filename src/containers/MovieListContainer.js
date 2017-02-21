@@ -17,7 +17,7 @@ class MovieList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.movies.title}
+
                     </tbody>
                 </table>
         );

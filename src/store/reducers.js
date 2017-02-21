@@ -8,7 +8,7 @@ export const makeRootReducer = (asyncReducers) => {
     return combineReducers({
         // Add sync reducers here
         // key: movies is equal to the value of the output of the reducer
-        movieData: movieReducer,
+        movies: movieReducer,
         //activeMovie: activeMovieReducer,
         ...asyncReducers
     });
