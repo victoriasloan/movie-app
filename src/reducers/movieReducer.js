@@ -1,10 +1,11 @@
 import { FETCH_MOVIES } from '../actions/actions';
 
-function movieReducer(state = {}, action) {
+
+function movieReducer(state = { movies: [] }, action) {
     switch (action.type) {
         case FETCH_MOVIES:
         return {
-            movieData: action.payload.data,
+            movies: action.payload.data,
             ...state
         };
     }

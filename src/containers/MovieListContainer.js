@@ -5,7 +5,14 @@ import { bindActionCreators } from 'redux';
 
 class MovieList extends Component {
 
-
+    renderMovie(movieInfo) {
+        return (
+            <tr>
+                <td>{movieInfo.show_id}</td>
+                <td>{movieInfo.show_title}</td>
+            </tr>
+        );
+    }
 
     render() {
         console.log(this.props);
@@ -17,7 +24,7 @@ class MovieList extends Component {
                         </tr>
                     </thead>
                     <tbody>
-
+                            {this.props.movies.map(this.renderMovie)}
                     </tbody>
                 </table>
         );
@@ -28,20 +35,21 @@ class MovieList extends Component {
 
 function mapStateToProps(state) {
     //whatever is returned will show up as props inside of MovieListContainer
+    console.log(state);
     return {
-        movies: state.movieData
+        movies: state.movies.movies
     };
 }
 
 function mapDispatchToProps(dispatch) {
-    // whenever selectMovie is called, the result should be passed to dispatch
+    // whenever fetchMovie is called, the result should be passed to dispatch
     // the dispatch will send the action to all the reducers
     return bindActionCreators({ fetchMovies: fetchMovies }, dispatch);
 }
 
 MovieList.propTypes = {
     fetchMovies: React.PropTypes.func,
-    movies: React.PropTypes.object
+    movies: React.PropTypes.array
 };
 
 

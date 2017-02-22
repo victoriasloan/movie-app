@@ -1,21 +1,19 @@
 import axios from 'axios';
 
-const API_URL = 'http://www.omdbapi.com/?';
+const API_URL = 'http://netflixroulette.net/api/api.php?';
 
 
 
 export const FETCH_MOVIES = 'FETCH_MOVIES';
 
 
-export function fetchMovies(title) {
+export const fetchMovies = (actor) => (dispatch) => {
 
-    const url = `${API_URL}&t=${title}`;
-    const request = axios.get(url);
+    const url = `${API_URL}&actor=${actor}`;
 
-    
-
-    return {
+    axios.get(url)
+    .then((movies) => dispatch ({
         type: FETCH_MOVIES,
-        payload: request
-    };
-}
+        payload: movies
+    }));
+};
