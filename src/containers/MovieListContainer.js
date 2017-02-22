@@ -2,30 +2,45 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchMovies } from '../actions/actions';
 import { bindActionCreators } from 'redux';
+//import R from 'ramda';
 
 class MovieList extends Component {
 
     renderMovie(movieInfo) {
+
+
+        const testKeys = Object.keys(movieInfo);
+
+
+
+
+        console.log(testKeys);
         return (
             <tr>
-                <td>{movieInfo.show_id}</td>
-                <td>{movieInfo.show_title}</td>
+
+                <td>Director: {movieInfo.director}</td>
+                <td>Show Id: {movieInfo.show_id}</td>
+                <td>Movie Title: {movieInfo.show_title}</td>
+                <td>Release Year: {movieInfo.release_year}</td>
+                <td>Show Cast: {movieInfo.show_cast}</td>
+                <td>Movie Category: {movieInfo.category}</td>
             </tr>
+
+
         );
     }
 
     render() {
-        console.log(this.props);
         return (
                 <table className="table table-hover">
                     <thead>
                         <tr>
-                            <th>Search Movies</th>
+                            <th>Searched Actor Movie Info</th>
                         </tr>
                     </thead>
                     <tbody>
-                            {this.props.movies.map(this.renderMovie)}
-                    </tbody>
+                        {this.props.movies.map(this.renderMovie)}
+                        </tbody>
                 </table>
         );
     }
@@ -35,7 +50,6 @@ class MovieList extends Component {
 
 function mapStateToProps(state) {
     //whatever is returned will show up as props inside of MovieListContainer
-    console.log(state);
     return {
         movies: state.movies.movies
     };
