@@ -5,8 +5,8 @@ function movieReducer(state = { movies: [] }, action) {
     switch (action.type) {
         case FETCH_MOVIES:
         return {
-            movies: action.payload.data,
-            ...state
+                ...state,
+            movies: action.payload.data
         };
     }
     return state;
